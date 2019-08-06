@@ -1,4 +1,4 @@
-# Exis' robot
+# Exis' robot (completed in 2 hours)
 
 python 3.7.3 is preferred. (Use of @dataclass)
 
