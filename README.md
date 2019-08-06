@@ -16,6 +16,12 @@ from robot.executor import execute_file
 
 execute_file(os.path.abspath("path_to_command_file"))
 
+# Or, directly call the robot itself
+from robot.robot import Robot
+
+my_robot = Robot()
+my_robot.place(1,1,"north")
+my_robot.move()
 ```
 
 To test:
