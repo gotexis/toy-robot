@@ -27,6 +27,13 @@ from robot.robot import Robot
 my_robot = Robot()
 my_robot.place(1,1,"north")
 my_robot.move()
+
+# customizing a board is also supported.
+
+from robot.robot import Board
+
+board = Board(10, 10)
+my_robot.board = board
 ```
 
 ## To test
