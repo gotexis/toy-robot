@@ -8,13 +8,12 @@ I got questioned that I completed it quite quick, indeed it was becuase Nick ema
 
 Also, I know the code is not perfect, but I didn't change it because I want to leave the original timestamp, so below [./robot/robot.py#L94](./robot/robot.py#L94) was actually useless, but I didn't fix it.
 
-Becuase I am a `Fire Emblem` fan, this makes me want to make my own warchess game, hmmm
-
 ```python
 def right(self):
     directions.index(self.face)  # <-- useless
 ```
 
+Becuase I am a `Fire Emblem` fan, this makes me want to make my own warchess game, hmmm
 
 ## To use
 ```python
