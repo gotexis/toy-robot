@@ -23,9 +23,7 @@ curdir = os.path.dirname(__file__)
 
 class TestFileExecution(unittest.TestCase):
 
-    def test_execute_file(self):
-        # 1
-
+    def test_invalid_command(self):
         # including invalid command
 
         with captured_output() as (out, err):
@@ -34,6 +32,7 @@ class TestFileExecution(unittest.TestCase):
         output = out.getvalue().strip()
         self.assertEqual(output, "0, 1, NORTH")
 
+    def test_execute_file(self):
         # 2
         with captured_output() as (out, err):
             execute_file(os.path.join(curdir, 'test2.txt'))
