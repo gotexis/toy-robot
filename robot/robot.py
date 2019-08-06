@@ -49,17 +49,20 @@ class Robot:
             y = int(y)
 
             if x > self.board.size_x:
-                print(f"x = {x} > {self.board.size_x}")
+                # print(f"x = {x} > {self.board.size_x}")
+                print("Invalid input.")
                 return
             if y > self.board.size_y:
-                print(f"y = {y} > {self.board.size_y}")
+                # print(f"y = {y} > {self.board.size_y}")
+                print("Invalid input.")
                 return
             if not face.lower() in directions:
-                print(f"{face.lower()} not in {directions}")
+                # print(f"{face.lower()} not in {directions}")
+                print("Invalid input.")
                 return
 
         except TypeError:
-            print(x, y, face)
+            # print(x, y, face)
             print("Invalid input.")
             return
 

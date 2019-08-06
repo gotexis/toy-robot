@@ -1,9 +1,11 @@
 import unittest
 from io import StringIO
 from robot.executor import execute_file
+from robot.robot import Robot
 import sys
 from contextlib import contextmanager
 import os
+
 
 # helper function to test stdout
 # https://stackoverflow.com/questions/4219717/how-to-assert-output-with-nosetest-unittest-in-python
@@ -23,6 +25,24 @@ curdir = os.path.dirname(__file__)
 
 class TestFileExecution(unittest.TestCase):
 
+    def test_falling_from_board(self):
+
+        with captured_output() as (out, err):
+            robot = Robot(4, 4, "east")
+            robot.move()
+
+        output = out.getvalue().strip()
+        self.assertEqual(output, "Safety warning - I am about to fall to oblivion!")
+
+    def test_invalid_input(self):
+
+        with captured_output() as (out, err):
+            robot = Robot()
+            robot.place(100, 100, "nowhere")
+
+        output = out.getvalue().strip()
+        self.assertEqual(output, "Invalid input.")
+
     def test_invalid_command(self):
         # including invalid command
 
@@ -41,7 +61,6 @@ class TestFileExecution(unittest.TestCase):
         self.assertEqual(output, "0, 0, WEST")
 
     def test_irregular_spaces_in_command(self):
-
         # 3
         with captured_output() as (out, err):
             execute_file(os.path.join(curdir, 'test3.txt'))
