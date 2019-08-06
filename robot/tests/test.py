@@ -25,6 +25,9 @@ class TestFileExecution(unittest.TestCase):
 
     def test_execute_file(self):
         # 1
+
+        # including invalid command
+
         with captured_output() as (out, err):
             execute_file(os.path.join(curdir, 'test1.txt'))
 
