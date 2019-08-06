@@ -6,7 +6,7 @@ update ps:
 
 I got questioned that I completed it quite quick, indeed it was becuase Nick emailed and send the test and also said `time was a factor` at 12pm, by 2pm I was still having lunch, so I thought I had to rush it to show my efficiency, so I did it in 2 hours and completed it by 4pm. The code was `100% original` without any reference.
 
-Also, I know the code is not perfect, but I didn't change it because I want to leave the original timestamp, so below `./robot/robot.py:L94` was actually useless, but I didn't fix it.
+Also, I know the code is not perfect, but I didn't change it because I want to leave the original timestamp, so below https://github.com/gotexis/toy-robot/blob/4e7cbddbfaed5d58b94727ab357cbc439fb7e7f9/robot/robot.py#L94 was actually useless, but I didn't fix it.
 
 ```python
     def right(self):
