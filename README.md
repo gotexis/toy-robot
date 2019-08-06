@@ -1,5 +1,7 @@
 # Exis' robot
 
+python 3.7.3 is preferred
+
 To use:
 ```python
 import os
