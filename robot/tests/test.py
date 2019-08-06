@@ -40,6 +40,8 @@ class TestFileExecution(unittest.TestCase):
         output = out.getvalue().strip()
         self.assertEqual(output, "0, 0, WEST")
 
+    def test_irregular_spaces_in_command(self):
+
         # 3
         with captured_output() as (out, err):
             execute_file(os.path.join(curdir, 'test3.txt'))
