@@ -54,6 +54,9 @@ class Robot:
     # board
     board: Board = Board()
 
+    def __repr__(self):
+        return f'Robot x:{self.x}, y:{self.y}, face:{self.face}'
+
     @property
     def is_placed(self):
         """
