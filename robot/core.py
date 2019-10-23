@@ -32,6 +32,17 @@ class Board:
         for robot in self.placed_robots:
             robot.report()
 
+    def get_robot(self, **criteria):
+        # return whether a position is already filled with a robot
+        filtered = [
+            robot for robot in self.placed_robots
+            if all([
+                (getattr(robot, k) == v) for k, v in criteria.items()
+            ])
+        ]
+        print(filtered)
+        return filtered
+
 
 @dataclass
 class Robot:

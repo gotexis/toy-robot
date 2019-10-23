@@ -12,3 +12,5 @@ robot_1.place(1, 2, 'north', board)
 robot_2.place(3, 4, 'south', board)
 
 board.report()
+
+board.get_robot(x=1, y=2)
