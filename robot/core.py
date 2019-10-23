@@ -144,3 +144,23 @@ class Robot:
         result = f"{self.x}, {self.y}, {self.face.upper()}"  # with space
         print(result)
         return result
+
+    def execute_line(self, line):
+        line = line.strip().lower()
+
+        cmd = getattr(self, line, None)
+        if cmd:
+            if self.is_placed:
+                cmd()
+            else:
+                print("Robot is not placed yet.")
+
+        # place command
+        if line.startswith("place "):
+            cmd_parse = line.replace("place ", "")
+            x, y, f = [s.strip() for s in cmd_parse.split(",")]
+
+            try:
+                self.place(x, y, f)
+            except Exception as e:
+                print(e)
