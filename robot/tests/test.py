@@ -1,7 +1,7 @@
 import unittest
 from io import StringIO
 from robot.executor import execute_file
-from robot.robot import Robot
+from robot.core import Robot
 import sys
 from contextlib import contextmanager
 import os

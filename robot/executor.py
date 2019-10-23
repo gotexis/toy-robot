@@ -1,4 +1,4 @@
-from .robot import Robot
+from robot.core import Robot
 
 commands = (
     "PLACE X,Y,F"
