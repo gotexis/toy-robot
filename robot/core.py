@@ -1,6 +1,7 @@
 from collections import OrderedDict
 from copy import deepcopy
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import List
 
 # board design ------------------------------------------------
 #  4
@@ -10,6 +11,7 @@ from dataclasses import dataclass
 #  0  1  2  3  4
 
 # how to move
+
 direction_clockwise_sequence = OrderedDict(
     [('north', [0, 1]),
      ('east', [1, 0]),
@@ -22,8 +24,9 @@ directions = list(direction_clockwise_sequence)
 
 @dataclass
 class Board:
-    size_x: int = 4
-    size_y: int = 4
+    size_x          : int  = 4
+    size_y          : int  = 4
+    placed_robots   : List = field(default_factory=list)
 
 
 @dataclass
