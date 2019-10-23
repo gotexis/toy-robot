@@ -28,6 +28,10 @@ class Board:
     size_y          : int  = 4
     placed_robots   : List = field(default_factory=list)
 
+    def report(self):
+        for robot in self.placed_robots:
+            robot.report()
+
 
 @dataclass
 class Robot:
@@ -46,7 +50,18 @@ class Robot:
         """
         return all([self.x == 0 or self.x, self.y == 0 or self.y, self.face])
 
-    def place(self, x, y, face):
+    def place(self, x, y, face, board=None):
+
+        # sync board
+        if not board:
+            board = self.board
+        else:
+            self.board = board
+
+        # include self in board placed robot
+        if self not in board.placed_robots:
+            board.placed_robots.append(self)
+
         try:
             x = int(x)
             y = int(y)
